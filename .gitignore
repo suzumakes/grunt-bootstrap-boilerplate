@@ -1,0 +1,14 @@
+# obv
+.DS_Store
+
+# Grunt Dev
+/node_modules/grunt/*
+/node_modules/grunt-contrib-copy/*
+/node_modules/grunt-contrib-cssmin/*
+/node_modules/grunt-contrib-imagemin/*
+/node_modules/grunt-contrib-uglify/*
+/node_modules/grunt-contrib-watch/*
+/node_modules/grunt-includes/*
+/node_modules/grunt-newer/*
+/node_modules/grunt-sass/*
+/node_modules/imagemin-mozjpeg/*
