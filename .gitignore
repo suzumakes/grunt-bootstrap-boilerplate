@@ -3,3 +3,6 @@
 
 # Grunt Dev
 /node_modules/*
+
+# Bower
+/bower_components/*

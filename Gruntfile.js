@@ -9,6 +9,25 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+
+        // concat Bower libraries
+        bower_concat: {
+            all: {
+                dest: 'src/javascript/prereq/bower.js',    // destination for bower compiled JS
+                cssDest: 'src/scss/vendor/_bower.scss',    // destination for bower compiled CSS
+                mainFiles: {
+                    bootstrap: [ 'dist/css/bootstrap.min.css', 'dist/js/bootstrap.min.js' ],    // main files must be specified for 3.3.5
+                    'font-awesome': [ 'css/font-awesome.css', 'fonts/*' ]    // main files must be specified for 4.4.0
+                },
+                exclude: [],    // components you want to exclude
+                include: [],    // components you need to include -- if -- they are not automatically included
+                dependencies: {},    // if Grunt spits out CSS/JS in the wrong order, specify dependencies here
+                bowerOptions: {
+                    relative: false
+                },
+            },
+        },
+
         // compile Sass/SCSS to CSS
         sass: {
             dev: {
@@ -127,6 +146,7 @@ module.exports = function(grunt) {
     });
 
     // Load the plugins
+    grunt.loadNpmTasks('grunt-bower-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
@@ -138,6 +158,7 @@ module.exports = function(grunt) {
 
     //Register tasks -- Grunt watch doens't need to be registered. newer runs the task only with new files
     grunt.registerTask('default', [
+        'bower_concat:all',
         'sass:dev',
         'newer:uglify:build',
         'includes:build',
