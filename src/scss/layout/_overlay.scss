@@ -1,0 +1,66 @@
+// Icon Overlay
+
+.icon-overlay {
+    display: block;
+    position: relative;
+}
+
+.icon-overlay img {
+    display: block;
+    max-width: 100%;
+}
+
+.icon-overlay a .icn-more {
+    opacity: 0;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-decoration: none;
+    width: 100%;
+    z-index: 100;
+    background-color: transparentize(rgba(94,79,162,1), 0.2);
+    -webkit-transition: all 200ms ease-out;
+        -moz-transition: all 200ms ease-out;
+            -o-transition: all 200ms ease-out;
+                transition: all 200ms ease-out;
+    overflow: hidden;
+}
+
+.icon-overlay a:hover .icn-more {
+    opacity: 1;
+}
+
+.icon-overlay a .icn-more:before {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    position: absolute;
+    text-align: center;
+    content: '\f067';
+    width: 60px;
+    height: 60px;
+    font-size: 60px;
+    line-height: 1;
+    color: #FFF;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    margin: -30px 0 0 -30px;
+    -webkit-transition: all 200ms ease-out;
+        -moz-transition: all 200ms ease-out;
+            -o-transition: all 200ms ease-out;
+                transition: all 200ms ease-out;
+}
+
+.icon-overlay a:hover .icn-more:before {
+    font-size: 30px;
+    padding-top: 15px;
+}
+
+.icon-overlay.icn-link a .icn-more:before {
+    content: '\f067';
+}

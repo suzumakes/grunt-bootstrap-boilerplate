@@ -1,48 +1,117 @@
-##Ready to Build Your Site?
+##Let's Kickstart a Site!
 
-Most boilerplates are pretty complex, incorporating a lot of different technologies and frameworks. Honestly, some of them are bewildering in their complexity. This boilerplate provides an easy introduction into using Grunt to automate preparing your _static html site_ for deployment.
+I can't be the only one who's somewhat bewildered by boilerplates that incorporate tech stacks that I don't have experience with, right? This is an easy-to-build well documented boilerplate for static sites that should:
 
-Everything will have copious documentation.
+1. Help you kickstart _static sites_
+2. Make it easy to change parts of many pages at once
+3. Minimize the files you push to your server
+4. Ensure you **_understand_** what you're doing when you use this boilerplate
 
-###What does this do?
+I'm using [GitHub's Atom](https://atom.io/) and [iTerm2](https://www.iterm2.com/).
 
-* you edit the src -- Grunt publishes to root
-* process Sass/SCSS to CSS
-* minify and combine JS
-* reuse PHP style includes in html
-* compress or copy images from src to root
+You'll need to have [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) installed.
 
-###Grunt Installation
+If you're using a Mac and you haven't checked out [Homebrew](http://brew.sh/), I suggest you do right away.
 
-Including the node_modules in the repo is an awful idea, so let's get to installing Grunt. If you haven't, install the Grunt CLI.
+####What's the stack here?
+
+1. [Bootstrap](https://github.com/twbs/bootstrap)
+2. [Bower](https://github.com/bower/bower)
+3. [Grunt](https://github.com/gruntjs/grunt)
+
+And of course, Bootstrap depends on [jQuery](https://github.com/jquery/jquery).
+
+####Credits
+
+1. [Subtle Patterns](http://subtlepatterns.com/) for the background.
+2. [Team Treehouse](https://teamtreehouse.com/) for being awesome.
+
+###Initial Setup
+
+Clone or Fork this repo!
+
+####Install Grunt
+
+We'll use npm to install Grunt.
+
+The package.json file specifies the dependencies we'll need here. So we need to install them. If you haven't, install the Grunt Command Line Interface.
 
     npm install -g grunt-cli
 
-Now that you have that taken care of, it's extremely simple to get everything ready. Fork the repo or clone it,
+Now Grunt's CLI is available to all of your projects, and we need to install the dependencies needed for this specific project locally, i.e. _in this project folder_.
 
     npm install
 
-Get yourself a drink, this could take a few minutes.
+If you encounter an error, make sure npm is updated!
 
-###Bower Installation
+    cd ~
+    npm update -g
 
-Front-end assets are maintained and updated with Bower (look I'll update this Readme a lot later today ok?), and the bower.json file specifies the packages needed, so if you want to get started, just type:
+####Install Bower
+
+The bower.json file specifies the assets we're using here. If you haven't, install Bower.
+
+    npm install -g bower
+
+Now we need to install the dependencies needed for this specific project.
 
     bower install
 
-###Ready to build your site?
+###Basic Structure
 
-Put your files in source, I'll expound more later, but run Grunt with the default command: "grunt" and you're off and running!
+Grunt is going to build your html pages and fill the css/, img/, and js/ folders, so you don't have to touch those.
 
-###Thanks/Kudos
+Everything you modify will be in the src/ folder.
 
-Background texture via subtlepatterns
+####HTML
 
-More credits later I promise :) like
+    src/
+        html/
+            include/
+                footer.hmtl
+                head.html
+                nav.html
+            index.html
 
-* Bootstrap
-* FontAwesome
-* Grunt
-* Bower
+Looks easy right? You put your content in the actual page files, i.e. "index.html".
 
-and more!
+If you edit the files in the include folder and run Grunt, those changes will be included where you have: include "(file).html"
+
+####img
+
+    src/
+        img/
+            code_logos/
+            large/
+            pages/
+            texture/
+
+Grunt copies all of these images to the root img/ folder, and minifies those images in the large/ folder.
+
+####JavaScript
+
+    src/
+        JavaScript/
+            config/
+            js/
+            prereq/
+
+Bower compiles JavaScript assets to src/JavaScript/prereq/bower.js and Grunt compiles prereq/, js/, and config/ in that order so you can manage JavaScript dependencies.
+
+####SCSS
+
+    src/
+        scss/
+            layout/
+            vendor/
+            style.scss
+
+Bower compiles CSS assets to src/scss/vendor/\_bower.scss and Grunt complies Sass to CSS with a sourceMap and a minified copy.
+
+###Ready?
+
+Follow the structure in the src/ folder, include your content, add your CSS, restyle everything, include plugins and custom JavaScript, put all the wonderful things your site has to offer in, then, when you're ready, run:
+
+    grunt
+
+and Grunt will do every registered task in Gruntfile.js. Oh, I didn't go over the Gruntfile? No worries, I've heavily documented the Gruntfile to help you better understand what's going on at every point, but if you have any questions please let me know :)

@@ -1,27 +1,37 @@
-// Install the plugins required as dependencies in package.json with npm install
+// Need another plugin? https://www.npmjs.com/ here's an example installation of JSHint
+// npm install grunt-contrib-jshint --save-dev
 
 module.exports = function(grunt) {
 
-    // require mozjpeg
+    // mozjpeg must be required here
     var mozjpeg = require('imagemin-mozjpeg');
 
     // Configure tasks
     grunt.initConfig({
+        // read package.json for dependencies
         pkg: grunt.file.readJSON('package.json'),
-
 
         // concat Bower libraries
         bower_concat: {
             all: {
-                dest: 'src/javascript/prereq/bower.js',    // destination for bower compiled JS
+                dest: 'src/JavaScript/prereq/bower.js',    // destination for bower compiled JS
                 cssDest: 'src/scss/vendor/_bower.scss',    // destination for bower compiled CSS
+
+                // if Bower cannot identify the main file for a package, you need to specify it here
                 mainFiles: {
-                    bootstrap: [ 'dist/css/bootstrap.min.css', 'dist/js/bootstrap.min.js' ],    // main files must be specified for 3.3.5
-                    'font-awesome': [ 'css/font-awesome.css', 'fonts/*' ]    // main files must be specified for 4.4.0
+                    bootstrap: [ 'dist/css/bootstrap.css', 'dist/js/bootstrap.js' ],    // needed for 3.3.5
+                    'font-awesome': [ 'css/font-awesome.css', 'fonts/*' ]    // needed for 4.4.0
                 },
-                exclude: [],    // components you want to exclude
-                include: [],    // components you need to include -- if -- they are not automatically included
-                dependencies: {},    // if Grunt spits out CSS/JS in the wrong order, specify dependencies here
+
+                exclude: [],    // exclude components
+                // EX: exclude: [ 'owlcarousel' ],
+
+                include: [],    // include components not automatically included
+                // EX: include: [ 'backbone' ],
+
+                dependencies: {},    // if dependencies aren't managed, you can manually configure them here
+                // EX: dependencies: { 'underscore': 'jquery' }
+
                 bowerOptions: {
                     relative: false
                 },
@@ -32,11 +42,11 @@ module.exports = function(grunt) {
         sass: {
             dev: {
                 options: {
-                    outputStyle: 'expanded',    // preserves readability
+                    outputStyle: 'expanded',    // don't compress
                     sourceMap: true,    // generate sourceMap
                     outFile: 'css/style.css.map'    // sourceMap file
                 },
-                files: {'css/style.css' : 'src/scss/style.scss'},    // 'production_file' : 'Sass/SCSS'
+                files: { 'css/style.css' : 'src/scss/style.scss' },    // 'css/production-file' : 'src/scss/source-file'
             },
         },
 
@@ -45,28 +55,28 @@ module.exports = function(grunt) {
             // use this by registering 'uglify:dev'
             dev: {
                 options: {
-                    beautify: true,    // make the code beautiful
-                    mangle: false,    // don't change any variables
+                    beautify: true,    // make the code pretty
+                    mangle: false,    // don't change variables
                     compress: false,    // don't minify the JS
                     preserveComments: 'all'    // keep all comments
                 },
                 files: [{
                     src: [
-                        'src/javascript/prereq/*.js',    // jQuery and Bootstrap
-                        'src/javascript/js/*.js',    // JS libraries and jQuery plugins
-                        'src/javascript/config/*.js'    // your JS
+                        'src/JavaScript/prereq/*.js',    // jQuery and Bootstrap
+                        'src/JavaScript/js/*.js',    // JS libraries and jQuery plugins
+                        'src/JavaScript/config/*.js'    // your JS
                     ],
-                    dest: 'js/script.js'    // development version of your concatenated scripts
+                    dest: 'js/script.js'    // dev concatenated scripts
                 }]
             },
             build: {
                 files: [{
                     src: [
-                        'src/javascript/prereq/*.js',
-                        'src/javascript/js/*.js',
-                        'src/javascript/config/*.js'
+                        'src/JavaScript/prereq/*.js',
+                        'src/JavaScript/js/*.js',
+                        'src/JavaScript/config/*.js'
                     ],
-                    dest: 'js/script.min.js'    // production
+                    dest: 'js/script.min.js'    // production concatenated scripts
                 }]
             },
         },
@@ -88,17 +98,17 @@ module.exports = function(grunt) {
         cssmin: {
             full: {
                 files: [{
-                    src: 'css/style.css',    // processed CSS
-                    dest: 'css/style.min.css'    // minified file
+                    src: 'css/style.css',    // CSS
+                    dest: 'css/style.min.css'    // minified CSS
                 }]
             },
         },
 
-        // minify images -- jpeg using mozjpeg
+        // minify images - mozjpeg for jpg
         imagemin: {
             dynamic: {
                 options: {
-                    optimizationLevel: 3,    // adjust the amount of compression from 0 to 12 **
+                    optimizationLevel: 3,    // adjust the amount of compression for png files from 0 (none) to 7 (very compressed)
                     svgoPlugins: [{ removeViewBox: false }],
                     use: [mozjpeg()]    // use mozjpeg for jpeg compression
                 },
@@ -106,7 +116,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'src/img/',    // source image directory
                     src: ['large/*.{png,jpg}'],    // subfolders to search for png and jpeg files
-                    dest: 'img/'    // destination -- will create directories that match subfolders
+                    dest: 'img/'    // destination - will create directories that match subfolders
                 }]
             },
         },
@@ -117,12 +127,13 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src/img/',    // source directory
-                    src: [    // subfolders to search for files
+                     // subfolders to search for files
+                    src: [
                         'pages/*.{png,jpg}',
                         'texture/*.{png,jpg}',
                         'code_logos/*.{png,jpg}'
                     ],
-                    dest: 'img/'    // destination -- will create directories that match subfolders
+                    dest: 'img/'    // destination - will create directories that match subfolders
                 }],
             },
         },
@@ -130,10 +141,11 @@ module.exports = function(grunt) {
         // Grunt watch
         watch: {
             js: {
-                files: [    // files to watch for changes
-                    'src/javascript/prereq/*.js',
-                    'src/javascript/js/*.js',
-                    'src/javascript/config/*.js'
+                // files to watch for changes
+                files: [
+                    'src/JavaScript/prereq/*.js',
+                    'src/JavaScript/js/*.js',
+                    'src/JavaScript/config/*.js'
                 ],
                 tasks: ['uglify:dev']    // task to run when a change is detected
             },
@@ -156,7 +168,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-newer');
     grunt.loadNpmTasks('grunt-sass');
 
-    //Register tasks -- Grunt watch doens't need to be registered. newer runs the task only with new files
+    // Register tasks
+    // prepending newer: runs tasks only on new or modified files
     grunt.registerTask('default', [
         'bower_concat:all',
         'sass:dev',
@@ -164,5 +177,6 @@ module.exports = function(grunt) {
         'includes:build',
         'cssmin:full',
         'newer:imagemin:dynamic',
-        'newer:copy:img']);
+        'newer:copy:img'
+    ]);
 }    // end exports

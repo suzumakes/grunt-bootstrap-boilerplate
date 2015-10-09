@@ -1,11 +1,11 @@
 {
-  "name": "grunt-bootstrap-boilerplate",
-  "version": "0.1.0",
-  "homepage": "https://github.com/suzumakes/grunt-bootstrap-boilerplate",
+  "name": "static-boilerplate",
+  "version": "0.2.0",
+  "homepage": "https://github.com/suzumakes/static-boilerplate",
   "authors": [
     "suzumakes"
   ],
-  "description": "boilerplate for grunt-powered static-html sites",
+  "description": "static site boilerplate with Grunt, Bower, and Bootstrap",
   "main": "index.html",
   "moduleType": [
     "node"
@@ -20,6 +20,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.5",
-    "font-awesome": "fontawesome#~4.4.0"
+    "font-awesome": "fontawesome#~4.4.0",
+    "jquery": "~2.1.4"
   }
 }

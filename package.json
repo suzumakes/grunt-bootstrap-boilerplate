@@ -1,11 +1,11 @@
 {
-  "name": "grunt-bootstrap-boilerplate",
-  "version": "0.1.0",
-  "description": "boilerplate for grunt-powered static-html sites",
+  "name": "static-boilerplate",
+  "version": "0.2.0",
+  "description": "static site boilerplate with Grunt, Bower, and Bootstrap",
   "main": "index.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/suzumakes/grunt-bootstrap-boilerplate.git"
+    "url": "https://github.com/suzumakes/static-boilerplate.git"
   },
   "author": "suzumakes",
   "license": "DWTFYW",
