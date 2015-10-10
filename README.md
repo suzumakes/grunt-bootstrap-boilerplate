@@ -7,11 +7,11 @@ I can't be the only one who's somewhat bewildered by boilerplates that incorpora
 3. Minimize the files you push to your server
 4. Ensure you **_understand_** what you're doing when you use this boilerplate
 
-I'm using [GitHub's Atom](https://atom.io/) and [iTerm2](https://www.iterm2.com/).
+I'm using GitHub's [Atom](https://atom.io/) and [iTerm2](https://www.iterm2.com/).
 
 You'll need to have [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) installed.
 
-If you're using a Mac and you haven't checked out [Homebrew](http://brew.sh/), I suggest you do right away.
+If you're using a Mac and you haven't checked out [Homebrew](http://brew.sh/), I suggest you do so right away.
 
 ####What's the stack here?
 

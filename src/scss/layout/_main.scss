@@ -50,6 +50,20 @@ img.lilroundy {
     padding: 30px 0;
 }
 
+// Background Texture
+
+body {
+    background-image: url("../img/texture/debut_dark.png");
+}
+
+main {
+    background:url("../img/pages/bigninja.png") left center no-repeat fixed;
+    -webkit-background-size: cover;
+         -moz-background-size: cover;
+             -o-background-size: cover;
+                 background-size: cover;
+}
+
 // Typography
 
 body {
@@ -84,7 +98,7 @@ p a:hover {
 
 @media (max-width: 768px) {
 
-    body {
+    #pages {
         margin: 0 20px;
     }
 }
@@ -296,7 +310,6 @@ header {
     }
 }
 
-
 // Dropdown
 
 .navbar {
@@ -398,14 +411,6 @@ header {
     -moz-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
     box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
 }
-
-// Background Texture
-
-body {
-    background-image: url("../img/texture/debut_dark.png");
-}
-
-// Footer
 
 // Footer
 

@@ -10678,6 +10678,18 @@ img.lilroundy {
 }
 
 body {
+  background-image: url("../img/texture/debut_dark.png");
+}
+
+main {
+  background: url("../img/pages/bigninja.png") left center no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
   background-color: rgba(0, 0, 0, 0.85);
   color: #FFF;
   font-family: 'Source Sans Pro', sans-serif;
@@ -10708,7 +10720,7 @@ p a:hover {
 }
 
 @media (max-width: 768px) {
-  body {
+  #pages {
     margin: 0 20px;
   }
 }
@@ -10986,10 +10998,6 @@ header {
   -webkit-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
   -moz-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
-}
-
-body {
-  background-image: url("../img/texture/debut_dark.png");
 }
 
 footer {
