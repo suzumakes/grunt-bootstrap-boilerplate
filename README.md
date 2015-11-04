@@ -115,3 +115,5 @@ Follow the structure in the src/ folder, include your content, add your CSS, res
     grunt
 
 and Grunt will do every registered task in Gruntfile.js. Oh, I didn't go over the Gruntfile? No worries, I've heavily documented the Gruntfile to help you better understand what's going on at every point, but if you have any questions please let me know :)
+
+I changed the license to MIT to get rid of Bower's complaints. Do whatever you want with this repo.
