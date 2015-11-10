@@ -173,7 +173,13 @@ module.exports = function(grunt) {
     grunt.registerTask('default', [
         'bower_concat:all',
         'sass:dev',
-        'newer:uglify:build',
+        'uglify:dev',
+        'includes:build',
+        'newer:imagemin:dynamic',
+        'newer:copy:img'
+    ]);
+    grunt.registerTask('build', [
+        'uglify:build',
         'includes:build',
         'cssmin:full',
         'newer:imagemin:dynamic',

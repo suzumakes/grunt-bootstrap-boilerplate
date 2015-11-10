@@ -1,6 +1,6 @@
 {
   "name": "static-boilerplate",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "static site boilerplate with Grunt, Bower, and Bootstrap",
   "main": "index.html",
   "repository": {

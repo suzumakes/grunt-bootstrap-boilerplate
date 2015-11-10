@@ -2,16 +2,16 @@
 
 I can't be the only one who's somewhat bewildered by boilerplates that incorporate tech stacks that I don't have experience with, right? This is an easy-to-build well documented boilerplate for static sites that should:
 
-1. Help you kickstart _static sites_
-2. Make it easy to change parts of many pages at once
-3. Minimize the files you push to your server
-4. Ensure you **_understand_** what you're doing when you use this boilerplate
+1. Make it easy to kickstart _static sites_
+2. Use Grunt-Includes to emulate PHP-style includes, making your site more modular
+3. Minimize and prepare your files for deployment
+4. Give _you_ a starting point for you to take advantage of Grunt and Bower for your projects
 
-I'm using GitHub's [Atom](https://atom.io/) and [iTerm2](https://www.iterm2.com/).
+I'm using [GitHub's Atom](https://atom.io/) and [iTerm2](https://www.iterm2.com/)
 
-You'll need to have [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) installed.
+You'll need [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/)
 
-If you're using a Mac and you haven't checked out [Homebrew](http://brew.sh/), I suggest you do so right away.
+If you're using a Mac, check out and start using [Homebrew](http://brew.sh/)
 
 ####What's the stack here?
 
@@ -28,32 +28,22 @@ And of course, Bootstrap depends on [jQuery](https://github.com/jquery/jquery).
 
 ###Initial Setup
 
-Clone or Fork this repo!
-
-####Install Grunt
-
-We'll use npm to install Grunt.
-
-The package.json file specifies the dependencies we'll need here. So we need to install them. If you haven't, install the Grunt Command Line Interface.
+Install the Grunt Command Line Interface.
 
     npm install -g grunt-cli
 
-Now Grunt's CLI is available to all of your projects, and we need to install the dependencies needed for this specific project locally, i.e. _in this project folder_.
+
+The package.json file specifies the dependencies we'll need here. So we need to install them.
 
     npm install
 
-If you encounter an error, make sure npm is updated!
+If you encounter any errors, make sure to check [npm's Issues](https://github.com/npm/npm/issues)
 
-    cd ~
-    npm update -g
-
-####Install Bower
-
-The bower.json file specifies the assets we're using here. If you haven't, install Bower.
+Install Bower globally.
 
     npm install -g bower
 
-Now we need to install the dependencies needed for this specific project.
+Now we need to install the dependencies listed in the bower.json file.
 
     bower install
 
@@ -96,7 +86,7 @@ Grunt copies all of these images to the root img/ folder, and minifies those ima
             js/
             prereq/
 
-Bower compiles JavaScript assets to src/JavaScript/prereq/bower.js and Grunt compiles prereq/, js/, and config/ in that order so you can manage JavaScript dependencies.
+Grunt compiles Bower packages' JavaScript to prereq/ and then compiles prereq/ => js/ => config => script.js.
 
 ####SCSS
 
@@ -106,14 +96,22 @@ Bower compiles JavaScript assets to src/JavaScript/prereq/bower.js and Grunt com
             vendor/
             style.scss
 
-Bower compiles CSS assets to src/scss/vendor/\_bower.scss and Grunt complies Sass to CSS with a sourceMap and a minified copy.
+Grunt compiles Bower packages' CSS to vendor/ and then processes Sass according to style.scss and outputs CSS to style.css with a sourceMap.
 
 ###Ready?
 
-Follow the structure in the src/ folder, include your content, add your CSS, restyle everything, include plugins and custom JavaScript, put all the wonderful things your site has to offer in, then, when you're ready, run:
+Follow the structure in the src/ folder, include your content, add your Sass/CSS, restyle everything, include plugins and custom JavaScript, put all the wonderful things your site has to offer in, then, when you're ready, run:
 
     grunt
 
-and Grunt will do every registered task in Gruntfile.js. Oh, I didn't go over the Gruntfile? No worries, I've heavily documented the Gruntfile to help you better understand what's going on at every point, but if you have any questions please let me know :)
+The 'default' task compiles "development" versions of your assets, they are not minified or mangled and are ready for you to test.
+
+    grunt build
+
+The 'build' task minifies and mangles your assets, getting them ready for production.
+
+###Oh!
+
+I didn't go over the Gruntfile? No worries, I've heavily documented it to help you better understand what's going on at every point, but if you have any questions please let me know :)
 
 I changed the license to MIT to get rid of Bower's complaints. Do whatever you want with this repo.

@@ -1,6 +1,13 @@
+// Variables and Mixins
+@import 'layout/variables';
+@import 'layout/mixins';
+
 // Vendor
 @import 'vendor/bower';
 
 // Main
 @import 'layout/main';
+@import 'layout/typography';
+@import 'layout/nav';
+@import 'layout/footer';
 @import 'layout/overlay';

@@ -19,11 +19,8 @@
     text-decoration: none;
     width: 100%;
     z-index: 100;
-    background-color: transparentize(rgba(94,79,162,1), 0.2);
-    -webkit-transition: all 200ms ease-out;
-        -moz-transition: all 200ms ease-out;
-            -o-transition: all 200ms ease-out;
-                transition: all 200ms ease-out;
+    background-color: transparentize($rarity-purple, 0.2);
+    @include ease-out-200(all);
     overflow: hidden;
 }
 
@@ -45,15 +42,12 @@
     height: 60px;
     font-size: 60px;
     line-height: 1;
-    color: #FFF;
+    color: $light-text;
     top: 50%;
     left: 50%;
     z-index: 2;
     margin: -30px 0 0 -30px;
-    -webkit-transition: all 200ms ease-out;
-        -moz-transition: all 200ms ease-out;
-            -o-transition: all 200ms ease-out;
-                transition: all 200ms ease-out;
+    @include ease-out-200(all);
 }
 
 .icon-overlay a:hover .icn-more:before {

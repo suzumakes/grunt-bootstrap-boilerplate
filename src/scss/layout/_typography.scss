@@ -1,0 +1,31 @@
+h1,
+h2 {
+    font-family: 'Kelly Slab', Serif;
+    letter-spacing: 0.025em;
+    color: $light-text;
+    margin-top: 20px;
+}
+
+p a {
+    color: inherit;
+    border-bottom: 1px solid $pale-light-blue;
+}
+
+p a:hover {
+    border-color: transparent;
+}
+
+@media (max-width: 768px) {
+
+    #pages {
+        margin: 0 20px;
+    }
+}
+
+@media (min-width: 769px) {
+
+    h2 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+}
