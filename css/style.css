@@ -10742,7 +10742,7 @@ p a:hover {
   border-color: transparent;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #pages {
     margin: 0 20px;
   }
@@ -10861,7 +10861,7 @@ header {
   margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .navbar .container {
     display: block;
     padding: 0 20px;
@@ -11058,7 +11058,7 @@ footer .row {
   color: #5e4fa2;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   footer .container > .row {
     margin-left: -20px;
     margin-right: -20px;
