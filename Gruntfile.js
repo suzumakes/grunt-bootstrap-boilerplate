@@ -158,27 +158,26 @@ module.exports = function(grunt) {
     });
 
     // Load the plugins
-    grunt.loadNpmTasks('grunt-bower-concat');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-includes');
-    grunt.loadNpmTasks('grunt-newer');
-    grunt.loadNpmTasks('grunt-sass');
+    require('load-grunt-tasks')(grunt);
+    // grunt.loadNpmTasks('grunt-bower-concat');
+    // grunt.loadNpmTasks('grunt-contrib-copy');
+    // grunt.loadNpmTasks('grunt-contrib-cssmin');
+    // grunt.loadNpmTasks('grunt-contrib-imagemin');
+    // grunt.loadNpmTasks('grunt-contrib-uglify');
+    // grunt.loadNpmTasks('grunt-contrib-watch');
+    // grunt.loadNpmTasks('grunt-includes');
+    // grunt.loadNpmTasks('grunt-newer');
+    // grunt.loadNpmTasks('grunt-sass');
 
     // Register tasks
     // prepending newer: runs tasks only on new or modified files
     grunt.registerTask('default', [
-        'bower_concat:all',
         'sass:dev',
-        'uglify:dev',
         'includes:build',
-        'newer:imagemin:dynamic',
-        'newer:copy:img'
     ]);
     grunt.registerTask('build', [
+        'bower_concat:all',
+        'uglify:dev',
         'uglify:build',
         'includes:build',
         'cssmin:full',
