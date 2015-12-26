@@ -177,6 +177,7 @@ module.exports = function(grunt) {
     ]);
     grunt.registerTask('build', [
         'bower_concat:all',
+        'sass:dev',
         'uglify:dev',
         'uglify:build',
         'includes:build',
