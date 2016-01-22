@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         // concat Bower libraries
         bower_concat: {
             all: {
-                dest: 'src/JavaScript/prereq/bower.js',    // destination for bower compiled JS
+                dest: 'src/JavaScript/js/_bower.js',    // destination for bower compiled JS
                 cssDest: 'src/scss/vendor/_bower.scss',    // destination for bower compiled CSS
 
                 // if Bower cannot identify the main file for a package, you need to specify it here
@@ -62,7 +62,6 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     src: [
-                        'src/JavaScript/prereq/*.js',    // jQuery and Bootstrap
                         'src/JavaScript/js/*.js',    // JS libraries and jQuery plugins
                         'src/JavaScript/config/*.js'    // your JS
                     ],
@@ -72,7 +71,6 @@ module.exports = function(grunt) {
             build: {
                 files: [{
                     src: [
-                        'src/JavaScript/prereq/*.js',
                         'src/JavaScript/js/*.js',
                         'src/JavaScript/config/*.js'
                     ],
@@ -143,7 +141,6 @@ module.exports = function(grunt) {
             js: {
                 // files to watch for changes
                 files: [
-                    'src/JavaScript/prereq/*.js',
                     'src/JavaScript/js/*.js',
                     'src/JavaScript/config/*.js'
                 ],

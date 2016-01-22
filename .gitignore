@@ -1,8 +1,9 @@
 # obv
 .DS_Store
 
-# Grunt Dev
+# Node
 /node_modules/*
+/etc/*
 
 # Bower
 /bower_components/*

@@ -84,9 +84,8 @@ Grunt copies all of these images to the root img/ folder, and minifies those ima
         JavaScript/
             config/
             js/
-            prereq/
 
-Grunt compiles Bower packages' JavaScript to prereq/ and then compiles prereq/ => js/ => config => script.js.
+Grunt compiles Bower packages' JavaScript to js/ => config/ => script.js.
 
 ####SCSS
 
