@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     // mozjpeg must be required here
     var mozjpeg = require('imagemin-mozjpeg');
 
-    // Configure tasks
+    // Configure tasks`
     grunt.initConfig({
         // read package.json for dependencies
         pkg: grunt.file.readJSON('package.json'),
@@ -19,8 +19,10 @@ module.exports = function(grunt) {
 
                 // if Bower cannot identify the main file for a package, you need to specify it here
                 mainFiles: {
-                    bootstrap: [ 'dist/css/bootstrap.css', 'dist/js/bootstrap.js' ],    // needed for 3.3.5
-                    'font-awesome': [ 'css/font-awesome.css', 'fonts/*' ]    // needed for 4.4.0
+                    bootstrap: [
+                        'dist/css/bootstrap.css',
+                         'dist/js/bootstrap.js',
+                     ],    // for 3.3.6
                 },
 
                 exclude: [],    // exclude components
@@ -165,6 +167,7 @@ module.exports = function(grunt) {
     // grunt.loadNpmTasks('grunt-includes');
     // grunt.loadNpmTasks('grunt-newer');
     // grunt.loadNpmTasks('grunt-sass');
+    // grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Register tasks
     // prepending newer: runs tasks only on new or modified files
