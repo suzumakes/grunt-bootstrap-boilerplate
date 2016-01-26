@@ -14,8 +14,8 @@ module.exports = function(grunt) {
         // concat Bower libraries
         bower_concat: {
             all: {
-                dest: 'src/JavaScript/js/_bower.js',    // destination for bower compiled JS
-                cssDest: 'src/scss/vendor/_bower.scss',    // destination for bower compiled CSS
+                dest: 'src/js/_bower.js',    // destination for bower compiled JS
+                cssDest: 'src/scss/_bower.scss',    // destination for bower compiled CSS
 
                 // if Bower cannot identify the main file for a package, you need to specify it here
                 mainFiles: {
@@ -62,8 +62,8 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     src: [
-                        'src/JavaScript/js/*.js',    // JS libraries and jQuery plugins
-                        'src/JavaScript/config/*.js'    // your JS
+                        'src/js/*.js',    // JS libraries and jQuery plugins
+                        'src/js/config/*.js'    // your JS
                     ],
                     dest: 'js/script.js'    // dev concatenated scripts
                 }]
@@ -71,8 +71,8 @@ module.exports = function(grunt) {
             build: {
                 files: [{
                     src: [
-                        'src/JavaScript/js/*.js',
-                        'src/JavaScript/config/*.js'
+                        'src/js/*.js',
+                        'src/js/config/*.js'
                     ],
                     dest: 'js/script.min.js'    // production concatenated scripts
                 }]
@@ -141,8 +141,8 @@ module.exports = function(grunt) {
             js: {
                 // files to watch for changes
                 files: [
-                    'src/JavaScript/js/*.js',
-                    'src/JavaScript/config/*.js'
+                    'src/js/*.js',
+                    'src/js/config/*.js'
                 ],
                 tasks: ['uglify:dev']    // task to run when a change is detected
             },

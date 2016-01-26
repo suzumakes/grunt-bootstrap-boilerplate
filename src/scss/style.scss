@@ -3,7 +3,19 @@
 @import 'layout/mixins';
 
 // Vendor
-@import 'vendor/bower';
+@import 'bower';
+@import "FontAwesome/variables";
+@import "FontAwesome/mixins";
+@import "FontAwesome/path";
+@import "FontAwesome/core";
+@import "FontAwesome/larger";
+@import "FontAwesome/fixed-width";
+@import "FontAwesome/list";
+@import "FontAwesome/bordered-pulled";
+@import "FontAwesome/animated";
+@import "FontAwesome/rotated-flipped";
+@import "FontAwesome/stacked";
+@import "FontAwesome/icons";
 
 // Main
 @import 'layout/main';
