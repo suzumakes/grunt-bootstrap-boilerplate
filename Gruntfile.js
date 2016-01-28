@@ -183,6 +183,6 @@ module.exports = function(grunt) {
         'includes:build',
         'cssmin:full',
         'newer:imagemin:dynamic',
-        'newer:copy:img'
+        'newer:copy:img',
     ]);
 }    // end exports

@@ -29,84 +29,84 @@ And of course, Bootstrap depends on [jQuery](https://github.com/jquery/jquery).
 ###Initial Setup
 
 Install the Grunt Command Line Interface.
-
-    npm install -g grunt-cli
-
-
+```
+npm install -g grunt-cli
+```
 The package.json file specifies the dependencies we'll need here. So we need to install them.
-
-    npm install
-
+```
+npm install
+```
 If you encounter any errors, make sure to check [npm's Issues](https://github.com/npm/npm/issues)
 
 Install Bower globally.
-
-    npm install -g bower
-
+```
+npm install -g bower
+```
 Now we need to install the dependencies listed in the bower.json file.
-
-    bower install
-
+```
+bower install
+```
 ###Basic Structure
 
-Grunt is going to build your html pages and fill the css/, img/, and js/ folders, so you don't have to touch those.
+Grunt builds your html pages and fills the /css, /img, and /js folders, so you don't have to touch those.
 
-Everything you modify will be in the src/ folder.
+Everything _you_ modify will be in the src/ folder.
 
 ####HTML
-
-    src/
-        html/
-            include/
-                footer.hmtl
-                head.html
-                nav.html
-            index.html
-
+```
+src/
+    html/
+        include/
+            footer.hmtl
+            head.html
+            nav.html
+        index.html
+```
 Looks easy right? You put your content in the actual page files, i.e. "index.html".
 
 If you edit the files in the include folder and run Grunt, those changes will be included where you have: include "(file).html"
 
 ####img
-
-    src/
-        img/
-            code_logos/
-            large/
-            pages/
-            texture/
-
-Grunt copies all of these images to the root img/ folder, and minifies those images in the large/ folder.
+```
+src/
+    img/
+        code_logos/
+        large/
+        pages/
+        texture/
+```
+Grunt minifies images in the large/ folder and copies all others to /img/.
 
 ####JavaScript
-
-    src/
-        JavaScript/
-            config/
-            js/
-
-Grunt compiles Bower packages' JavaScript to js/ => config/ => script.js.
+```
+src/
+    js/
+        _bower.js
+        config/
+```
+Grunt compiles JavaScript to js/ => js/config/ => script.js.
 
 ####SCSS
-
-    src/
-        scss/
-            layout/
-            vendor/
-            style.scss
-
-Grunt compiles Bower packages' CSS to vendor/ and then processes Sass according to style.scss and outputs CSS to style.css with a sourceMap.
+```
+src/
+    scss/
+        FontAwesome/
+        layout/
+        _bower.scss
+        style.scss
+```
+Grunt compiles to scss/ runs Sass, and outputs CSS to /css/style.css.
 
 ###Ready?
 
 Follow the structure in the src/ folder, include your content, add your Sass/CSS, restyle everything, include plugins and custom JavaScript, put all the wonderful things your site has to offer in, then, when you're ready, run:
-
-    grunt
-
+```
+grunt
+```
 The 'default' task compiles "development" versions of your assets, they are not minified or mangled and are ready for you to test.
-
-    grunt build
-
+```
+grunt build
+```
 The 'build' task minifies and mangles your assets, getting them ready for production.
 
 ###Oh!
