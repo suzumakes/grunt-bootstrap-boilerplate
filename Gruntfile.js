@@ -94,6 +94,25 @@ module.exports = function(grunt) {
             },
         },
 
+        // make html pretty
+        prettify: {
+            options: {
+                "condense": false,    // don't automatically strip lines
+                "indent": 4,    // spaces to indent
+                "indent_inner_html": false,    // <head> and <body>
+                "brace_style": "collapse",    // braces on { same_line }
+                "preserve_newlines": true,    // keep line breaks
+                "max_preserve_newlines": 1,    // number of line breaks to keep
+            },
+            all: {
+                expand: true,
+                cwd: '.',
+                ext: '.html',
+                src: ['*.html'],
+                dest: '.'
+            },
+        },
+
         // minify CSS
         cssmin: {
             full: {
@@ -174,6 +193,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', [
         'sass:dev',
         'includes:build',
+        'prettify',
     ]);
     grunt.registerTask('build', [
         'bower_concat:all',
@@ -181,6 +201,7 @@ module.exports = function(grunt) {
         'uglify:dev',
         'uglify:build',
         'includes:build',
+        'prettify',
         'cssmin:full',
         'newer:imagemin:dynamic',
         'newer:copy:img',

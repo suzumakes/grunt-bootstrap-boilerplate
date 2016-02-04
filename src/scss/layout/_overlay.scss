@@ -20,7 +20,7 @@
     width: 100%;
     z-index: 100;
     background-color: transparentize($rarity-purple, 0.2);
-    @include ease-out-200(all);
+    transition: all 200mx ease-out;
     overflow: hidden;
 }
 
@@ -47,7 +47,7 @@
     left: 50%;
     z-index: 2;
     margin: -30px 0 0 -30px;
-    @include ease-out-200(all);
+    transition: all 200mx ease-out;
 }
 
 .icon-overlay a:hover .icn-more:before {

@@ -68,7 +68,7 @@ body {
 
 main {
     background:url("../img/pages/bigninja.png") left center no-repeat fixed;
-    @include background-size(cover);
+    background-size: cover;
 }
 
 // Buttons
@@ -83,7 +83,7 @@ main {
     -webkit-font-smoothing: antialiased;
     border: none;
     text-transform: uppercase;
-    @include ease-out-200(all);
-    @include border-radius(3px);
-    @include box-shadow($light-shadow);
+    transition: all 200mx ease-out;
+    border-radius: 3px;
+    box-shadow: 0 -2px 0 $light-shadow;
 }

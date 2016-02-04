@@ -208,11 +208,11 @@ header {
         border: 1px solid $light-text;
         border-bottom-width: 2px;
         border-bottom-color: $light-text;
-        @include border-radius(3px);
+        border-radius: 3px;
         -webkit-border-top-left-radius: 0 !important;
         -moz-border-radius-topleft: 0 !important;
         border-top-left-radius: 0 !important;
-        @include big-box-shadow($light-shadow);
+        box-shadow: 0 10px 10px $light-shadow;
         z-index: 0;
     }
 
