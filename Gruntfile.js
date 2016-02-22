@@ -2,6 +2,7 @@
 // npm install grunt-contrib-jshint --save-dev
 
 module.exports = function(grunt) {
+    require('jit-grunt')(grunt);
 
     // mozjpeg must be required here
     var mozjpeg = require('imagemin-mozjpeg');
@@ -21,7 +22,7 @@ module.exports = function(grunt) {
                 mainFiles: {
                     bootstrap: [
                         'dist/css/bootstrap.css',
-                         'dist/js/bootstrap.js',
+                        'dist/js/bootstrap.js',
                      ],    // for 3.3.6
                 },
 
@@ -54,7 +55,6 @@ module.exports = function(grunt) {
 
         // concat and minify JS
         uglify: {
-            // use this by registering 'uglify:dev'
             dev: {
                 options: {
                     beautify: true,    // make the code pretty
@@ -160,33 +160,21 @@ module.exports = function(grunt) {
         // Grunt watch
         watch: {
             js: {
-                // files to watch for changes
-                files: [
+                files: [	// files to watch for changes
                     'src/js/*.js',
-                    'src/js/config/*.js'
+                    'src/js/config/*.js',
                 ],
-                tasks: ['uglify:dev']    // task to run when a change is detected
+                tasks: [	// task to run when a change is detected
+                    'uglify:dev',
+                ],
             },
             css: {
-                files: ['src/scss/**/*.scss'],    // files to watch for changes
-                tasks: ['sass:dev']    // task to run when a change is detected
+                files: ['src/scss/**/*.scss'],
+                tasks: ['sass:dev'],
             },
         },
 
     });
-
-    // Load the plugins
-    require('load-grunt-tasks')(grunt);
-    // grunt.loadNpmTasks('grunt-bower-concat');
-    // grunt.loadNpmTasks('grunt-contrib-copy');
-    // grunt.loadNpmTasks('grunt-contrib-cssmin');
-    // grunt.loadNpmTasks('grunt-contrib-imagemin');
-    // grunt.loadNpmTasks('grunt-contrib-uglify');
-    // grunt.loadNpmTasks('grunt-contrib-watch');
-    // grunt.loadNpmTasks('grunt-includes');
-    // grunt.loadNpmTasks('grunt-newer');
-    // grunt.loadNpmTasks('grunt-sass');
-    // grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Register tasks
     // prepending newer: runs tasks only on new or modified files
