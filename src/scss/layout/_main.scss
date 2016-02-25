@@ -72,9 +72,13 @@ body {
     background-image: url("../img/texture/debut_dark.png");
 }
 
-main {
+#main {
     background:url("../img/pages/bigninja.png") left center no-repeat fixed;
     background-size: cover;
+}
+
+.spaced {
+    margin: 1em 0;
 }
 
 // Buttons
