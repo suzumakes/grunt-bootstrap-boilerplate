@@ -1,3 +1,10 @@
+// Font Awesome
+@mixin FontAwesome($weight) {
+    font-family: 'FontAwesome';
+    font-weight: $weight;
+    font-style: normal;
+}
+
 // Box Shadow -- Prefixes no longer needed
 // @mixin box-shadow($x, $y, $blur, $color) {
 //     box-shadow: $x $y $blur $color;

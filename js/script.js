@@ -8759,6 +8759,7 @@ if (typeof jQuery === "undefined") {
     });
 }(jQuery);
 
+// Overlay
 $(document).ready(function() {
-    $(".icon-overlay a").prepend('<span class="icn-more"></span>');
+    $(".overlay a").append('<span class="icn-more"></span>');
 });

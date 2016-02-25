@@ -1,9 +1,6 @@
 # obv
 .DS_Store
 
-# Node
+# Build
 /node_modules/*
-/etc/*
-
-# Bower
 /bower_components/*

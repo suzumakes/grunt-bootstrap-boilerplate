@@ -15,8 +15,8 @@ module.exports = function(grunt) {
         // concat Bower libraries
         bower_concat: {
             all: {
-                dest: 'src/js/_bower.js',    // destination for bower compiled JS
-                cssDest: 'src/scss/_bower.scss',    // destination for bower compiled CSS
+                dest: 'src/js/_bower.js',    // destination for bower JS
+                cssDest: 'src/scss/_bower.scss',    // destination for bower CSS
 
                 // if Bower cannot identify the main file for a package, you need to specify it here
                 mainFiles: {

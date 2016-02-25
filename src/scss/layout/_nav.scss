@@ -6,7 +6,6 @@ header {
     margin: 0;
     border-radius: 0;
     border: none;
-    // position: relative;
     z-index: 8000;
     min-height: inherit;
 
@@ -18,31 +17,21 @@ header {
     ul {
         list-style: none;
     }
+}
 
-    .nav {
-
-        .open > a,
-        .open > a:hover,
-        .open > a:focus {
-            background-color: $light-text;
-            border-color: $light-text;
-        }
-    }
+.navbar-nav,
+.navbar-brand {
+    float: none;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .navbar-brand {
     font-family: 'Kelly Slab', Serif;
-    float: none;
-    display: table-cell;
-    vertical-align: middle;
     padding: 0;
     max-width: 300px;
     font-size: 1.5em;
     color: $light-text;
-
-    img {
-        max-height: 40px;
-    }
 }
 
 .navbar-fixed-top {
@@ -51,9 +40,7 @@ header {
 
 .navbar-header {
     float: none !important;
-    // position: relative;
     background: $almost-black;
-    border-bottom: 1px solid $almost-black;
     z-index: 0;
 
     .navbar-brand {
@@ -75,9 +62,6 @@ header {
 }
 
 .navbar-nav {
-    float: none;
-    display: table-cell;
-    vertical-align: middle;
     padding-left: 30px;
     margin: 0;
 
@@ -98,17 +82,12 @@ header {
     > li > a:focus  {
         background-color: $almost-black;
         border-color: $light-text;
-        color: $rarity-purple;
+        color: $cool-blue;
     }
 }
 
 .btn.responsive-menu {
     display: none;
-    width: 40px;
-    height: 40px;
-    font-size: 2em;
-    padding: 0;
-    margin: 0;
 }
 
 @media (max-width: 767px) {
@@ -177,8 +156,6 @@ header {
         > li > a {
             padding-left: 0;
             padding-right: 0;
-            border: none;
-            border-radius: 0;
         }
 
         > li > a:focus {
@@ -188,6 +165,11 @@ header {
 
     .btn.responsive-menu {
         display: table;
+        width: 40px;
+        height: 40px;
+        font-size: 2em;
+        padding: 0;
+        margin: 0;
 
          i {
             display: table-cell;
@@ -202,31 +184,13 @@ header {
     .dropdown-menu {
         padding: 0;
         margin: 0;
+        z-index: 0;
         width: auto;
         background: $almost-black;
-        border: none;
         border: 1px solid $light-text;
-        border-bottom-width: 2px;
-        border-bottom-color: $light-text;
-        border-radius: 3px;
-        -webkit-border-top-left-radius: 0 !important;
-        -moz-border-radius-topleft: 0 !important;
+        border-bottom: 2px solid $light-text;
         border-top-left-radius: 0 !important;
         box-shadow: 0 10px 10px $light-shadow;
-        z-index: 0;
-    }
-
-    .dropdown-submenu .dropdown-menu {
-        top: -1px !important;
-    }
-
-    .dropdown-submenu:hover > a,
-    .dropdown-submenu:focus > a, {
-        background: $almost-black;
-        color: $light-text;
-    }
-
-    .dropdown-menu:not(.yamm-dropdown-menu) {
 
         li {
             background: $almost-black;
@@ -244,14 +208,6 @@ header {
             color: $light-text;
             text-transform: uppercase;
             font-weight: 700;
-            white-space: normal;
-        }
-
-        li a:hover,
-        li a.active {
-            filter: none;
-            background-color: $light-text;
-            color: $almost-black;
         }
 
         > li > a:hover,
@@ -260,12 +216,12 @@ header {
         > .active > a:hover,
         > .active > a:focus {
             background: $almost-black;
-            color: $rarity-purple;
+            color: $cool-blue;
         }
     }
 
-    > li > .dropdown-menu:not(.yamm-dropdown-menu):after,
-    > li > .dropdown-menu:not(.yamm-dropdown-menu):before {
+    > li > .dropdown-menu:after,
+    > li > .dropdown-menu:before {
         display: none;
     }
 }

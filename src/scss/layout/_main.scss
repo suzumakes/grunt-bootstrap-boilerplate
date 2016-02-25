@@ -2,8 +2,6 @@
 *,
 *:before,
 *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -13,27 +11,35 @@
 
 a:hover,
 a:focus, {
-    color: $rarity-purple;
+    color: $cool-blue;
     text-decoration: none;
 }
 
-figure {
-    margin: 0;
-    padding: 0;
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.25em;
 
-    img {
-        width: 100%;
-        height: auto;
+    + span {
+        border-radius: 0.25em;
     }
 }
 
-img.roundy {
-    border-radius: 8px;
-    margin: 20px 0;
+.sharp {
+    border-radius: 0;
+
+    + span {
+        border-radius: 0;
+    }
 }
 
-img.lilroundy {
-    border-radius: 4px;
+.roundyer {
+    border-radius: 0.5em;
+
+    + span {
+        border-radius: 0.5em;
+    }
 }
 
 .container {
@@ -74,7 +80,7 @@ main {
 // Buttons
 .btn {
     color: $light-text;
-    background-color: $rarity-purple;
+    background-color: $cool-blue;
     padding: 11px 20px 13px;
     margin: 15px 0;
     font-size: 14px;
