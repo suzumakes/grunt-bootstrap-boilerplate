@@ -8207,10 +8207,7 @@ img + span {
 }
 
 .container {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  padding-right: 0;
-  padding-left: 0;
+  padding: 4em 1em;
 }
 
 .row {
@@ -8274,12 +8271,6 @@ p a {
 
 p a:hover {
   border-color: transparent;
-}
-
-@media (max-width: 767px) {
-  #main {
-    margin: 0 20px;
-  }
 }
 
 @media (min-width: 769px) {
